@@ -1,24 +1,44 @@
-#include <iostream>
+#include <bits/stdc++.h>
+using namespace std;
+// https://www.hackerearth.com/problem/algorithm/too-lazy-to-name-the-question/
 int main()
 {
     int a, b, c;
-    std::cin >> a >> b >> c;
-
-    int* arr_ab = new int[c];
-
-    for (int i = 0; i < c; i++)
+    cin >> a >> b >> c;
+    int cth_num;
+    for (int i = 2; c > 0; i++)
     {
-        if ((3 * (i + 1)) != (5 * (i + 1)))
+        if (i % a == 0 || i % b == 0)
         {
-            arr_ab[i] = (i + 1) * 3;
-            arr_ab[i] = (i + 1) * 5;
-            
-        }
-        else
-        {
-            arr_ab[i] = (i + 1) * 3;
+            c--;
+            cth_num = i;
         }
     }
-
+    int lcm;
+    for (int i = 1; i <= a * b; i++)
+    {
+        if (i % a == 0 && i % b == 0)
+        {
+            lcm = i;
+            break;
+        }
+    }
+    int step;
+    if (cth_num % a == 0 && cth_num % b == 0)
+    {
+        step = lcm;
+    }
+    else if (cth_num % a == 0)
+    {
+        step = a;
+    }
+    else{
+        step=b;
+    }
+    for (int i = cth_num; i >=0; i=i-step)
+    {
+        cout<<i<<" ";
+    }
+    
     return 0;
 }
