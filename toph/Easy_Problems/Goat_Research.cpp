@@ -29,17 +29,19 @@ int main()
         {
             s.append("a");
         }
+
+
         if (s.size() < 5)
         {
-            s = "  " + s;
+            s = "    " + s;
         }
-        else if (s.size() < 7)
+        else if (s.size() < 7 &&s.size()>=5)
+        {
+            s = "   " + s;
+        }
+        else if (s.size() < 11 && s.size()>=7)
         {
             s = "  " + s;
-        }
-        else if (s.size() < 11)
-        {
-            s = " " + s;
         }
         cout << s << endl;
     }
