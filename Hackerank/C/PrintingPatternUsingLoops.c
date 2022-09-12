@@ -8,34 +8,91 @@ int main()
 
     int n;
     scanf("%d", &n);
-    int arr[2 * n - 1];
-    int start = 0;
-    int end = 2 * n - 1;
-    int num = n;
-    for (int i = 0; i < 2 * n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        for (int j = start; j < end; j++)
+        for (int j = 0; j < n; j++)
         {
-            arr[j] = num;
+            if (i == j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i < j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i > j)
+            {
+                printf("%d ", n-j);
+            }
         }
+          for (int j = n-2; j >=0; j--)
+        {
+              if (i == j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i < j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i > j)
+            {
+                printf("%d ", n-j);
+            }
+        }
+        printf("\n");
+    }
 
-        if (num > 1)
-        {
-            start++;
-            end--;
-            num--;
-        }
-        else
-        {
-for (int i = n-1; i >=1; i--)
-{
-}
 
-            
-        }
-        for (int k = 0; k < 2 * n - 1; k++)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   for (int i = n-2; i >=0; i--)
+    {
+        for (int j =0; j <n; j++)
         {
-            printf("%d ", arr[k]);
+            if (i == j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i < j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i > j)
+            {
+                printf("%d ", n-j);
+            }
+        }
+        for (int j = n-2; j >=0; j--)
+        {
+              if (i == j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i < j)
+            {
+                printf("%d ", n-i);
+            }
+            else if (i > j)
+            {
+                printf("%d ", n-j);
+            }
         }
         printf("\n");
     }
